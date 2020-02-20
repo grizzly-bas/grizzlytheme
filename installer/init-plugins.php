@@ -35,6 +35,14 @@ function grizzly_register_required_plugins() {
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 		),
 		array(
+			'name'               => 'Github updater', // The plugin name.
+			'slug'               => 'github-updater', // The plugin slug (typically the folder name).
+			'source'             => get_template_directory() . '/installer/plugins/github-updater.zip', // The plugin source.
+			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+		),
+		array(
 			'name'      => 'Yoast SEO',
 			'slug'      => 'wordpress-seo',
             'required'  => true,

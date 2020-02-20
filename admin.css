@@ -1,0 +1,133 @@
+body.widgets-php .widget-liquid-right{
+    width: 78%;
+}
+body.widgets-php .widget-liquid-right .sidebars-column-1,
+body.widgets-php .widget-liquid-right .sidebars-column-2{
+    width: 100% !important;
+    max-width: 100% !important;
+}
+body.widgets-php .widget-liquid-right .widgets-holder-wrap h2{
+    padding: 12px 7px 13px !important;
+}
+body.widgets-php .widget-liquid-right .widgets-holder-wrap>div{
+    display: flex !important;
+    flex-wrap: wrap;
+}
+body.widgets-php .widget-liquid-right .widgets-holder-wrap>div .sidebar-name{
+    width: 100%;
+}
+body.widgets-php .widget-liquid-right .widgets-holder-wrap>div .widget{
+    margin: 0 4px;
+    min-width: 170px;
+}
+body.widgets-php .widget-liquid-right .widgets-holder-wrap>div .widget[id*='gnm_widget_spacer']{
+    flex-grow: 1;
+}
+body.widgets-php .widget-liquid-right .widgets-holder-wrap>div .widget[id*='gnm_widget_spacer'] .widget-top{
+    background: 
+    repeating-linear-gradient(45deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 10px,
+    rgba(0, 0, 0, 0.3) 10px,
+    rgba(0, 0, 0, 0.3) 20px
+    );
+    opacity: 0.4;
+}
+body.widgets-php div.widget-liquid-left {
+    margin: 0;
+    width: 20%;
+    float: left;
+}
+body.widgets-php #widget-list>.widget{
+    width: 100% !important;
+    float: none !important;
+    margin-bottom: 10px;
+}
+body.widgets-php #widget-list>.widget .widget-top{
+    background: #ffffff;
+}
+body.widgets-php #available-widgets{
+    max-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+body.widgets-php #widget-list>.widget>.widget-description,
+body.widgets-php #available-widgets>.sidebar-name,
+body.widgets-php #available-widgets>.widget-holder>.sidebar-description{
+    display: none !important;
+}
+body.widgets-php .widget .widget-top {
+    background: rgba(250, 250, 250, 0);
+}
+body.widgets-php .widget-placeholder {
+	margin-top: 0;
+	width: 150px;
+	margin: 0!important;
+}
+/* --------------- Grizzly plugin ----------------- */
+
+.grizzly-plugin-content-block {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 16px 0;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.grizzly-plugin-content-block h2 {
+    margin-top: 0px;
+}
+
+.grizzly-options {
+    display: none;
+}
+
+.grizzly-options.active {
+    display: block;
+}
+
+.grizzly-options .form-table {
+    width: auto;
+}
+
+.grizzly-add-button, .grizzly-min-button {
+    width: 25px;
+    line-height: 21px;
+    height: 25px;
+    font-weight: bold;
+    color: #fff;
+    background: #0085ba;
+    border-radius: 15px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    border-color: #0073aa #006799 #006799;
+    box-shadow: 0 1px 0 #006799;
+    font-size: 20px;
+}
+
+.grizzly-add-button:hover {
+    opacity: .8;
+    color: #fff;
+    text-decoration: none;
+}
+
+.grizzly-options textarea {
+    width: 400px;
+    height: 150px;
+}
+
+.grizzly-options input[type=text] {
+    width: 400px;
+    height: 40px;
+}
+
+
+/* --------------- editor ----------------- */
+
+.elementor-tab-control-style, .elementor-control-section_typo {
+    display: none !important;
+}

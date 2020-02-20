@@ -1,0 +1,464 @@
+/*
+Theme Name: Grizzly theme
+Theme URI: https://www.grizzlymarketing.nl/
+Author: Grizzly New Marketing
+Author URI: https://www.grizzlymarketing.nl/
+Description: Custom Grizzly theme
+Version: 1.0
+Text Domain: grizzlymarketing
+*/
+
+/*------------------------------------------------*/
+/*-----------------[BASIC STYLES]-----------------*/
+/*------------------------------------------------*/
+
+html, body {
+    margin: 0;
+    position: relative;
+    font-size: 16px;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header .widget_spacer, footer .widget_spacer {
+    flex-grow: 1;
+}
+
+#page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------------------------------------------*/
+/*-----------------[HEADER STYLES]----------------*/
+/*------------------------------------------------*/
+
+header.fixed {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+}
+
+body.admin-bar header.fixed {
+    top: 32px;
+}
+
+header p {
+    margin: 0px;
+}
+
+header .header-widget {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*-----------------[HEADER LOGO]-----------------*/
+
+header .custom-logo-link img{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+}
+
+/*-----------------[HEADER MENU]-----------------*/
+
+header .menu {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    display: flex;
+}
+
+header .menu li {
+    position: relative;
+}
+
+header .menu li.menu-item-has-children > a::after {
+    content: "\f0dd";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 10px;
+    position: relative;
+    top: -2px;
+}
+
+header .menu li li.menu-item-has-children > a::after {
+    content: "\f0da";
+    margin-left: 5px;
+    position: absolute;
+    top: 50%;
+    margin-top: -8px;
+    right: 15px;
+}
+
+header .menu li a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+header .menu li a:hover, header .menu li.current-menu-item a {
+    text-decoration: none;
+}
+
+header .menu li ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    width: 200px;
+    z-index: 1;
+    top: 100%;
+}
+
+header .menu li ul ul {
+    top: 0px;
+    left: 100%;
+}
+
+header .menu li:hover > ul {
+    display: block;
+}
+
+header .menu li ul li {
+    float: none;
+}
+
+header .menu li ul a {
+    display: block;
+}
+
+/*--------------- [SMART MENU] -------------*/
+
+#menu-items-wrap {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    z-index: 10;
+    display: none;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.2);
+}
+
+#menu-items-wrap.toggle {
+    display: block;
+}
+
+#menu-items-wrap ul {
+    list-style-type: none;
+    padding: 15px;
+    margin: 0px;
+}
+
+#menu-items-wrap ul li a {
+    display: block;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+/*------------------------------------------------*/
+/*---------------[MOBILE MENU STYLES]-------------*/
+/*------------------------------------------------*/
+
+#mobile-menu {
+    display: none;
+}
+
+#mobile-menu-content {
+    position: fixed;
+    bottom: 50px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.2);
+    left: 0px;
+    z-index: 998;
+    max-height: calc(100% - 50px);
+    height: 0px;
+    overflow-x: hidden;
+    transition: height .5s;
+}
+
+#mobile-menu-content.toggle {
+    height: 300px;
+}
+
+#mobile-menu-content ul {
+    list-style-type: none;
+    padding: 15px;
+    margin: 0px;
+}
+
+#mobile-menu-content ul.sub-menu {
+    display: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+
+#mobile-menu-content ul.sub-menu.toggle {
+    display: block;
+}
+
+#mobile-menu-content ul li {
+    position: relative;
+}
+
+#mobile-menu-content ul li a {
+    display: block;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+#mobile-menu-content ul li a:hover {
+    background: #eee;
+}
+
+#mobile-menu-bar {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    background: #fff;
+    width: 100%;
+    height: 50px;
+    z-index: 999;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.2);
+}
+
+.mobile-menu-item {
+    flex: 1;
+    text-align: center;
+}
+
+.mobile-menu-item > * {
+    line-height: 50px;
+    display: block;
+    color: #000;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.mobile-menu-item .mobile-menu-button i {
+    line-height: 50px;
+}
+
+.mobile-menu-item .mobile-menu-button i.fa-times {
+    display: none;
+}
+
+.mobile-menu-item .mobile-menu-button.toggle i.fa-times {
+    display: inline-block;
+}
+
+.mobile-menu-item .mobile-menu-button.toggle i.fa-bars {
+    display: none;
+}
+
+li.menu-item-has-children > .sub-menu-items-button {
+    width: 34px;
+    height: 34px;
+    background: #eee;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    cursor: pointer;
+}
+
+li.menu-item-has-children > .sub-menu-items-button::before {
+    content: '';
+    width: 0;
+    bottom: -20px;
+    left: 10px;
+    position: relative;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #222;
+}
+
+li.menu-item-has-children > .sub-menu-items-button.toggle::before {
+    border-top: 0px;
+    border-bottom: 7px solid #222;
+    bottom: 10px;
+}
+
+/*------------------------------------------------*/
+/*-----------------[CONTENT STYLES]---------------*/
+/*------------------------------------------------*/
+
+main {
+    flex: 1;
+}
+
+/*------------------[FORM STYLES]-----------------*/
+
+.gform_fields {
+    list-style-type: none;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gform_fields .gfield {
+    padding: 0px 15px 15px 15px;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.gform_wrapper .validation_error {
+    background: #B71C1C;
+    padding: 15px;
+    color: #fff;
+    margin: 15px;
+}
+
+#page-container .gfield_error input, #page-container .gfield_error textarea {
+    border-color: #B71C1C;
+}
+
+.validation_message {
+    color: #B71C1C;
+    padding-top: 5px;
+}
+
+.gform_wrapper input:not([type=submit]), .gform_wrapper select, .gform_wrapper textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    display: block;
+}
+
+.gform_footer {
+    padding: 0px 15px 15px 15px;
+}
+
+/*------------------[BACK TO TOP]-----------------*/
+
+#back-to-top {
+    position: fixed;
+    right: -50px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    border: 0px;
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity ease-in-out .3s;
+    -moz-transition: opacity ease-in-out .3s;
+    -o-transition: opacity ease-in-out .3s;
+    transition: opacity ease-in-out .3s;
+}
+
+#back-to-top.scrolled {
+    opacity: 1;
+    right: 30px;
+}
+
+/*-----------------[ERROR 404]-----------------*/
+
+.et_pb_row.error-404 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*------------------------------------------------*/
+/*-----------------[FOOTER STYLES]----------------*/
+/*------------------------------------------------*/
+
+footer p {
+    margin: 0px;
+}
+
+footer .footer-widget-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/*------------------[FOOTER TOP]------------------*/
+
+footer #footer-top {
+    padding: 35px 0px;
+}
+
+#footer-top div[class^="footer-top"] {
+    padding: 15px;
+}
+
+footer #footer-top ul {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+/*-----------------[FOOTER BOTTOM]----------------*/
+
+footer #footer-bottom .menu {
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    display: flex;
+}
+
+footer #footer-bottom .menu li::before {
+    content: ' - ';
+    padding-left: 4px;
+}
+
+/*------------------[RESPONSIVE]------------------*/
+
+@media only screen and (max-width: 1400px) {
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+@media only screen and (max-width: 992px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+    #mobile-menu {
+        display: block;
+    }
+
+    #menu-hoofdmenu-container {
+        display: none;
+    }
+
+    footer {
+        padding-bottom: 50px;
+    }
+
+    #page-container .gform_fields .gfield {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+}

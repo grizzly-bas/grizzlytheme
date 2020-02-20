@@ -64,18 +64,10 @@
 
         <main>
             <?php
-                // if(!empty(get_grizzly_option('headerglobal'))) {
-                //     if (!is_admin() && ( is_search() || is_404() )) {
-                //         echo '<div class="globalheader"></div>';
-                //     }
-                // }
+                if(!empty(get_grizzly_option('headerglobal'))) {
+                    $headerID = get_grizzly_option('headerglobal');
+                    if (is_search() || is_404()){
+                        echo do_shortcode('[et_pb_section global_module="' . $headerID . '"][/et_pb_section]'); 
+                    }
+                }
             ?>
-
-            <div class="gnm-global-header">
-                <div class="et_pb_row">
-                    <div class="et_pb_column et_pb_column_4_4">
-                        <h1><?php echo do_shortcode('[page-title]'); ?></h1>
-                        <?php if ( function_exists('yoast_breadcrumb') ) {yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );} ?>
-                    </div>
-                </div>
-            </div>

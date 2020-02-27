@@ -35,9 +35,18 @@
             </div>
         </div>
         <div id="footer-bottom">
-            <div class="et_pb_row<?php if(get_option('grizzly_footer-fullwidth') == 0){echo '_fluid';} ?>">
+            <div class="et_pb_row<?php if(get_grizzly_option('footerfullwidth')){echo '_fluid';} ?>">
                 <?php if ( is_active_sidebar( 'widget_header_top' ) ) : 
                     dynamic_sidebar( 'widget_footer_bottom' );
+                    else :
+                        echo '<div class="et_pb_column">&copy; ' . date('Y') . ' <a href="' . get_home_url() . '">' . do_shortcode('[bedrijfsnaam]') . '</a>';
+                        if (get_page_by_title( 'Privacybeleid' )) {
+                            echo ' - <a href="' . get_permalink( get_page_by_title( 'Privacybeleid' ) ) .  '">Privacybeleid</a>';
+                        }
+
+                        if (get_page_by_title( 'Cookiebeleid' )) {
+                            echo ' - <a href="' . get_permalink( get_page_by_title( 'Cookiebeleid' ) ) .  '">Cookiebeleid</a></div>';
+                        }
                 endif; ?>
             </div>
         </div>

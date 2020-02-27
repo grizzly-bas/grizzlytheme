@@ -350,7 +350,6 @@
     </div>
 
     <form action="" method="post" novalidate="novalidate">
-
         <?php 
             include_once('pages/general.php');
             include_once('pages/customerdata.php');

@@ -26,6 +26,10 @@
 
 /* STRUCTURE */
 
+.col {
+    flex: 1;
+}
+
 .et_pb_column {
     padding-left: 15px;
     padding-right: 15px;

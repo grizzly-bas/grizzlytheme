@@ -1,11 +1,10 @@
 /*
-Theme Name: Grizzlytheme
+Theme Name: Grizzly theme
 Theme URI: https://www.grizzlymarketing.nl/
-Github Theme URI: https://github.com/grizzly-bas/grizzlytheme
 Author: Grizzly New Marketing
 Author URI: https://www.grizzlymarketing.nl/
 Description: Custom Grizzly theme
-Version: v0.10
+Version: 1.0
 Text Domain: grizzlymarketing
 */
 
@@ -42,6 +41,10 @@ header .widget_spacer, footer .widget_spacer {
 /*-----------------[HEADER STYLES]----------------*/
 /*------------------------------------------------*/
 
+header {
+    position: relative;
+}
+
 header.fixed {
     position: fixed;
     top: 0px;
@@ -76,18 +79,18 @@ header .custom-logo-link img{
 
 /*-----------------[HEADER MENU]-----------------*/
 
-header .menu {
+header [id^="header-"] .menu {
     padding: 0px;
     margin: 0px;
     list-style-type: none;
     display: flex;
 }
 
-header .menu li {
+header [id^="header-"] .menu li {
     position: relative;
 }
 
-header .menu li.menu-item-has-children > a::after {
+header [id^="header-"] .menu li.menu-item-has-children > a::after {
     content: "\f0dd";
     font-family: "Font Awesome 5 Pro";
     font-weight: bold;
@@ -98,7 +101,7 @@ header .menu li.menu-item-has-children > a::after {
     top: -2px;
 }
 
-header .menu li li.menu-item-has-children > a::after {
+header [id^="header-"] .menu li li.menu-item-has-children > a::after {
     content: "\f0da";
     margin-left: 5px;
     position: absolute;
@@ -107,17 +110,18 @@ header .menu li li.menu-item-has-children > a::after {
     right: 15px;
 }
 
-header .menu li a {
+header [id^="header-"] .menu li a {
     display: inline-block;
     padding: 10px 15px;
+    white-space: nowrap;
     text-decoration: none;
 }
 
-header .menu li a:hover, header .menu li.current-menu-item a {
+header [id^="header-"] .menu li a:hover, header [id^="header-"] .menu li.current-menu-item a {
     text-decoration: none;
 }
 
-header .menu li ul {
+header [id^="header-"] .menu li ul {
     display: none;
     position: absolute;
     list-style-type: none;
@@ -128,20 +132,20 @@ header .menu li ul {
     top: 100%;
 }
 
-header .menu li ul ul {
+header [id^="header-"] .menu li ul ul {
     top: 0px;
     left: 100%;
 }
 
-header .menu li:hover > ul {
+header [id^="header-"] .menu li:hover > ul {
     display: block;
 }
 
-header .menu li ul li {
+header [id^="header-"] .menu li ul li {
     float: none;
 }
 
-header .menu li ul a {
+header [id^="header-"] .menu li ul a {
     display: block;
 }
 
@@ -190,13 +194,15 @@ header .menu li ul a {
     left: 0px;
     z-index: 998;
     max-height: calc(100% - 50px);
-    height: 0px;
+    display: none;
     overflow-x: hidden;
-    transition: height .5s;
 }
 
-#mobile-menu-content.toggle {
-    height: 300px;
+#mobile-menu-content.mobile-menu-to-top {
+    top: 100%;
+    bottom: auto;
+    position: absolute;
+    max-height: 1000px;
 }
 
 #mobile-menu-content ul {
@@ -257,19 +263,19 @@ header .menu li ul a {
     text-decoration: none;
 }
 
-.mobile-menu-item .mobile-menu-button i {
+.widget_mobile_menu .mobile-menu-button i {
     line-height: 50px;
 }
 
-.mobile-menu-item .mobile-menu-button i.fa-times {
+.widget_mobile_menu .mobile-menu-button i.fa-times {
     display: none;
 }
 
-.mobile-menu-item .mobile-menu-button.toggle i.fa-times {
+.widget_mobile_menu .mobile-menu-button.toggle i.fa-times {
     display: inline-block;
 }
 
-.mobile-menu-item .mobile-menu-button.toggle i.fa-bars {
+.widget_mobile_menu .mobile-menu-button.toggle i.fa-bars {
     display: none;
 }
 
@@ -380,6 +386,22 @@ main {
 .et_pb_row.error-404 {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+/*-----------------[SEARCH PAGE]-----------------*/
+
+.search-page {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.search-page article {
+    margin: 15px 0px;
+}
+
+.search-page h2 {
+    margin: 0px;
+    display: inline-block;
 }
 
 /*------------------------------------------------*/

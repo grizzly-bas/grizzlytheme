@@ -47,15 +47,22 @@
                 </div>
             <?php endif; ?>
 
-            <div id="menu-items-wrap"><ul></ul></div>
-        </header>
-
-        <?php if ( is_active_sidebar( 'widget_mobile_menu' ) && !get_grizzly_option('headermobilebottombar')) :?>
-            <div id="mobile-menu">
-                <div id="mobile-menu-content">
+            <?php if (get_grizzly_option('headermobilebottombar')) :?>
+                <div id="mobile-menu-content" class="mobile-menu-to-top">
                     <?php wp_nav_menu( array('menu' => '1', 'after' => '<div class="sub-menu-items-button"></div>')); ?>
                 </div>
-                
+            <?php endif; ?>
+        </header>
+
+        
+
+        <?php if (is_active_sidebar( 'widget_mobile_menu' )) :?>
+            <div id="mobile-menu">
+                <?php if (!get_grizzly_option('headermobilebottombar')) :?>
+                    <div id="mobile-menu-content">
+                        <?php wp_nav_menu( array('menu' => '1', 'after' => '<div class="sub-menu-items-button"></div>')); ?>
+                    </div>
+                <?php endif; ?>
                 <div id="mobile-menu-bar">
                     <?php dynamic_sidebar( 'widget_mobile_menu' ); ?>
                 </div>
@@ -63,11 +70,3 @@
         <?php endif; ?>
 
         <main>
-            <?php
-                if(!empty(get_grizzly_option('headerglobal'))) {
-                    $headerID = get_grizzly_option('headerglobal');
-                    if (is_search() || is_404()){
-                        echo do_shortcode('[et_pb_section global_module="' . $headerID . '"][/et_pb_section]'); 
-                    }
-                }
-            ?>

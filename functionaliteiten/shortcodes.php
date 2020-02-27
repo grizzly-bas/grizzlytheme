@@ -51,7 +51,7 @@
         ), $atts );
 
         if (!empty($a['icon'])) {
-            return '<a href="tel:' . preg_replace('/[^0-9.]./', '', get_grizzly_option('telefoon')) . '"><i class="' . $a['icon'] . '"></i>' . get_grizzly_option('telefoon') . '</a>';
+            return '<a href="tel:' . preg_replace('/[^0-9.]./', '', get_grizzly_option('telefoon')) . '"><i class="' . $a['icon'] . '"></i> ' . get_grizzly_option('telefoon') . '</a>';
         }
 
         else {
@@ -66,7 +66,7 @@
         ), $atts );
 
         if (!empty($a['icon'])) {
-            return '<a href="mailto:' . get_grizzly_option('email') . '"><i class="' . $a['icon'] . '"></i>' . get_grizzly_option('email') . '</a>';
+            return '<a href="mailto:' . get_grizzly_option('email') . '"><i class="' . $a['icon'] . '"></i> ' . get_grizzly_option('email') . '</a>';
         }
 
         else {

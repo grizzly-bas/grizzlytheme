@@ -254,7 +254,7 @@ class gnm_widget_mobile_menu extends WP_Widget {
     public function widget( $args, $instance ) {
 		echo $args['before_widget'];
 	
-        echo '<div class="mobile-menu-button gm-click" data-id="mobile-menu-content"><i class="fa fa-bars" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></div>';
+        echo '<div class="mobile-menu-button gm-click" data-id="mobile-menu-content" data-animate="slide"><i class="fa fa-bars" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></div>';
 
 		echo $args['after_widget'];
     }

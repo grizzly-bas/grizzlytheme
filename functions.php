@@ -20,8 +20,6 @@ include_once get_template_directory() . '/functionaliteiten/thema-opties.php';
 include_once get_template_directory() . '/functionaliteiten/duplicate.php';
 include_once get_template_directory() . '/functionaliteiten/shortcodes.php';
 include_once get_template_directory() . '/functionaliteiten/disable.php';
-// include_once get_template_directory() . '/functionaliteiten/ajax.php';
-// include_once get_template_directory() . '/functionaliteiten/userroles.php';
 
 
 /**

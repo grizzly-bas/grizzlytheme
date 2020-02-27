@@ -1,0 +1,142 @@
+
+/* -------------- VISUALS -------------- */
+
+/* gnm-visual-1 */
+
+.gnm-visual-1 {
+    
+}
+
+/* gnm-visual-2 */
+
+.gnm-visual-2 {
+    
+}
+
+/* gnm-visual-3 */
+
+.gnm-visual-3 {
+    
+}
+
+/* -------------- CTA -------------- */
+
+/* gnm-cta-1 */
+
+.gnm-cta-1 {
+    
+}
+
+/* gnm-cta-2 */
+
+.gnm-cta-2 {
+    
+}
+
+/* -------------- Contact -------------- */
+
+/* gnm-contact-1 */
+
+.gnm-contact-1 {
+    
+}
+
+/* -------------- USP -------------- */
+
+/* gnm-usp-1 */
+
+.gnm-usp-1 .gnm-item {
+    text-align: center;
+}
+
+.gnm-usp-1 .gnm-item i {
+    background: #222;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+/* gnm-usp-2 */
+
+.gnm-usp-2 .gnm-item {
+    display: flex;
+}
+
+.gnm-usp-2 .gnm-item i {
+    background: #222;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.gnm-usp-2 .gnm-item p {
+    line-height: 40px;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+/* -------------- CARD -------------- */
+
+/* gnm-card-1 */
+
+.gnm-card-1 {
+    
+}
+
+/* gnm-card-2 */
+
+.gnm-card-2 .et_pb_blurb_container {
+    padding: 15px;
+}
+
+.gnm-card-2 .et_pb_blurb_container .et_pb_module_header {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.gnm-card-2 .et_pb_blurb_container .et_pb_blurb_description p:last-of-type {
+    margin-bottom: 0px;
+}
+
+/* gnm-card-3 */
+
+.gnm-card-3 .et_pb_blurb_container {
+    padding: 15px;
+}
+
+.gnm-card-3 .et_pb_main_blurb_image {
+    position: relative;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.gnm-card-3 .et_pb_main_blurb_image .et_pb_image_wrap {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+.gnm-card-3 .et_pb_main_blurb_image .et_pb_image_wrap img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.gnm-card-3 .et_pb_blurb_container .et_pb_module_header {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.gnm-card-3 .et_pb_blurb_container .et_pb_blurb_description p:last-of-type {
+    margin-bottom: 0px;
+}

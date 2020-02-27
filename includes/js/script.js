@@ -24,6 +24,15 @@
             $(this).parent().children('.sub-menu').slideToggle();
             $(this).toggleClass('toggle');
         });
+
+        // ------------ Divi modules ------------
+
+        // Accordion
+
+        $('.et_pb_accordion .et_pb_toggle_title').on('click', function() {
+            $(this).toggleClass('active');
+            $(this).parent().find('.et_pb_toggle_content').slideToggle();
+        });
     });
 
     $(window).on("scroll", function() {
@@ -33,6 +42,8 @@
             $('[data-scroll="add-class"]').removeClass('scrolled');
         }
     });
+
+    
 
     
 })( jQuery );

@@ -1,21 +1,17 @@
 <?php
 
 
+
 include_once get_template_directory() . '/installer/class/required-plugins.class.php';
 include_once get_template_directory() . '/installer/init-plugins.php';
 
-function grizzly_init() {
-
-    // SET GFROM LICENSE
-    if (is_plugin_active( 'gravityforms/gravityforms.php' )){
-        define( 'GF_LICENSE_KEY', '10eaf6e3469f1476b263021308803dda' );
-    }
-
+// SET GFROM LICENSE
+if (is_plugin_active( 'gravityforms/gravityforms.php' )){
+    define( 'GF_LICENSE_KEY', '10eaf6e3469f1476b263021308803dda' );
 }
-add_action( 'admin_init', 'grizzly_init' );
-
 
 if(isset($_POST['grizzlyinstall'])) {
+
 
     // CREATE DEFAULT PAGES
     include_once get_template_directory() . '/installer/class/post-creator.class.php';
@@ -60,14 +56,7 @@ if(isset($_POST['grizzlyinstall'])) {
     wp_delete_post( 2, true );
     wp_delete_post( 3, true );
 
-    // SET THEME TO ACTIVE
-    if( get_option('grizzly_active') !== false ) {
-        add_option('grizzly_active', true);
-    } else {
-        update_option('grizzly_active', true);
-    }
-
-    // ZET DEFAULT YOAST SETTINGS
+    // SET DEFAULT YOAST SETTINGS
     $set_yoast = 'a:20:{s:15:"ms_defaults_set";b:0;s:7:"version";s:4:"13.0";s:20:"disableadvanced_meta";b:1;s:19:"onpage_indexability";b:1;s:11:"baiduverify";s:0:"";s:12:"googleverify";s:0:"";s:8:"msverify";s:0:"";s:12:"yandexverify";s:0:"";s:9:"site_type";s:0:"";s:20:"has_multiple_authors";s:0:"";s:16:"environment_type";s:0:"";s:23:"content_analysis_active";b:1;s:23:"keyword_analysis_active";b:1;s:21:"enable_admin_bar_menu";b:1;s:26:"enable_cornerstone_content";b:1;s:18:"enable_xml_sitemap";b:1;s:24:"enable_text_link_counter";b:1;s:22:"show_onboarding_notice";b:1;s:18:"first_activated_on";i:1581588936;s:13:"myyoast-oauth";b:0;}';
     if( get_option('wpseo') !== false ) {
         add_option('wpseo', $set_yoast);
@@ -81,5 +70,8 @@ if(isset($_POST['grizzlyinstall'])) {
     } else {
         update_option('wpseo_social', $set_yoast_social);
     }
+
+    // SET THEME TO ACTIVE
+    add_option('grizzly_active', true);
 
 }

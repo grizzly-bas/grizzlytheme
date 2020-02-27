@@ -333,35 +333,39 @@
     <a href="" id="top"></a>
     <h1 class="wp-heading-inline">Grizzly opties</h1>
 
-    <h2 class="nav-tab-wrapper" id="wpseo-tabs">
-        <a class="nav-tab nav-tab-active" href="#top#grizzly-options-general">Algemeen</a>
-        <a class="nav-tab" href="#top#grizzly-options-data">Klant gegevens</a>
-        <a class="nav-tab" href="#top#grizzly-options-header">Header</a>
-        <a class="nav-tab" href="#top#grizzly-options-footer">Footer</a>
-        <a class="nav-tab" href="#top#grizzly-options-analytics">Analytics</a>
-        <a class="nav-tab" href="#top#grizzly-options-help">Help</a>
-    </h2>
+    <?php if( get_option('grizzly_active') != true ): // CHECK IF THEME HAS BEEN ACTIVATED PREVIOUSLY?>
 
-    <div class="grizzly-plugin-content-block">
-        <h2>Het thema installeren</h2>
+            <h2>Het thema installeren</h2>
+            <form action="" method="post" novalidate="novalidate">
+                <input type="submit" name="grizzlyinstall" class="button button-primary" value="Installeer thema">
+            </form>
+        </div>
+
+    <?php else: ?>
+
+        <h2 class="nav-tab-wrapper" id="wpseo-tabs">
+            <a class="nav-tab nav-tab-active" href="#top#grizzly-options-general">Algemeen</a>
+            <a class="nav-tab" href="#top#grizzly-options-data">Klant gegevens</a>
+            <a class="nav-tab" href="#top#grizzly-options-header">Header</a>
+            <a class="nav-tab" href="#top#grizzly-options-footer">Footer</a>
+            <a class="nav-tab" href="#top#grizzly-options-analytics">Analytics</a>
+            <a class="nav-tab" href="#top#grizzly-options-help">Help</a>
+        </h2>
+
         <form action="" method="post" novalidate="novalidate">
-            <input type="submit" name="grizzlyinstall" class="button button-primary" value="Installeer thema">
+            <?php
+                include_once('pages/general.php');
+                include_once('pages/customerdata.php');
+                include_once('pages/header.php');
+                include_once('pages/footer.php');
+                include_once('pages/analytics.php');
+                include_once('pages/help.php');
+            ?>
+
+            <input type="submit" name="grizzlyupload" class="button button-primary" value="Bijwerken">
         </form>
-    </div>
 
-    <form action="" method="post" novalidate="novalidate">
-        <?php 
-            include_once('pages/general.php');
-            include_once('pages/customerdata.php');
-            include_once('pages/header.php');
-            include_once('pages/footer.php');
-            include_once('pages/analytics.php');
-            include_once('pages/help.php');
-            //print_r(glob(""));
-        ?>
-
-        <input type="submit" name="grizzlyupload" class="button button-primary" value="Bijwerken">
-    </form>
+    <?php endif; ?>
 </div>
 
 <script>

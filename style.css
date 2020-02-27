@@ -5,7 +5,7 @@ Github Theme URI: https://github.com/grizzly-bas/grizzlytheme
 Author: Grizzly New Marketing
 Author URI: https://www.grizzlymarketing.nl/
 Description: Custom Grizzly theme
-Version: v0.14.1
+Version: v0.15
 Text Domain: grizzlymarketing
 */
 
@@ -13,10 +13,26 @@ Text Domain: grizzlymarketing
 /*-----------------[BASIC STYLES]-----------------*/
 /*------------------------------------------------*/
 
+
 html, body {
     margin: 0;
     position: relative;
     font-size: 16px;
+}
+
+.padding-s {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.padding-m {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.padding-l {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 div {
@@ -26,6 +42,10 @@ div {
 img {
     max-width: 100%;
     height: auto;
+}
+
+.gnm-horizontal-center {
+    align-items: center;
 }
 
 header .widget_spacer, footer .widget_spacer {
@@ -323,9 +343,11 @@ main {
     padding: 0px;
     display: flex;
     flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
-.gform_fields .gfield {
+.gfield {
     padding: 0px 15px 15px 15px;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
@@ -337,7 +359,7 @@ main {
     background: #B71C1C;
     padding: 15px;
     color: #fff;
-    margin: 15px;
+    margin: 15px 0px;
 }
 
 #page-container .gfield_error input, #page-container .gfield_error textarea {
@@ -357,7 +379,7 @@ main {
 }
 
 .gform_footer {
-    padding: 0px 15px 15px 15px;
+    padding: 0px 15px 15px 0px;
 }
 
 /*------------------[BACK TO TOP]-----------------*/

@@ -242,18 +242,18 @@
             echo '<div class="grizzly-plugin-content-block"><h2>' . $tab . '</h2><table class="form-table">';
             
             if(!get_option('grizzly_fields')) {
-                foreach($fields[$tab] as $value) {
-                    echo '<tr><th><label for="' . $value['name'] . '">' . $value['name'] . '</label></th>';
+                foreach($fields[$tab] as $key => $value) {
+                    echo '<tr><th><label for="' . $value['name'] . '">' . $key . '</label></th>';
                     echo '<td><input type="' . $value['input'] . '" name="' . $value['name'] . '"></td></tr>';
                 }
             } else {
                 $grizzly_fields = get_option('grizzly_fields');
                 $json = json_decode($grizzly_fields);
                 
-                foreach($fields[$tab] as $value) {
+                foreach($fields[$tab] as $key => $value) {
                     $name = $value['name'];
 
-                    echo '<tr><th><label for="' . $value['name'] . '">' . $value['name'] . '</label></th>';
+                    echo '<tr><th><label for="' . $value['name'] . '">' . $key . '</label></th>';
                     
                     // IF INPUT IS TEXT
                     if($value['input'] == 'text') {

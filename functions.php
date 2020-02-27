@@ -42,6 +42,7 @@ function grizzly_enqueue_scripts() {
 	wp_enqueue_style( 'fontawesome', 'https://pro.fontawesome.com/releases/v5.10.2/css/all.css' );
 	wp_enqueue_style( 'style.css', get_stylesheet_uri() );
 	wp_enqueue_style( 'grizzly-divi-styles', get_template_directory_uri().'/includes/css/divi.css' );
+	wp_enqueue_style( 'grizzly-blokken', get_template_directory_uri().'/includes/css/grizzly-blokken.css' );
 	
     wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.2.1.slim.min.js' );
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/includes/js/script.js');

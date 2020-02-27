@@ -214,7 +214,7 @@ class gnm_widget_email extends WP_Widget {
     public function widget( $args, $instance ) {        
 		echo $args['before_widget'];        
 		
-		echo '<a class="e-mail-clicks" href="mailto:'.get_option('grizzly_mail').'">'.get_option('grizzly_mail').'</a>';
+		echo do_shortcode('[e-mail icon="fas fa-envelope"]');
 		
 		echo $args['after_widget'];
     }
@@ -234,7 +234,7 @@ class gnm_widget_tel extends WP_Widget {
     public function widget( $args, $instance ) {        
 		echo $args['before_widget'];
 	
-        echo '<a class="telefoon-clicks" href="tel:'.get_option('grizzly_tel').'">'.get_option('grizzly_tel').'</a>';
+        echo do_shortcode('[telefoon icon="fas fa-phone"]');
 
 		echo $args['after_widget'];
     }

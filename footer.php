@@ -44,8 +44,8 @@
                             echo ' - <a href="' . get_permalink( get_page_by_title( 'Privacybeleid' ) ) .  '">Privacybeleid</a>';
                         }
 
-                        if (get_page_by_title( 'Cookiebeleid' )) {
-                            echo ' - <a href="' . get_permalink( get_page_by_title( 'Cookiebeleid' ) ) .  '">Cookiebeleid</a></div>';
+                        if (get_page_by_title( 'Cookieverklaring' )) {
+                            echo ' - <a href="' . get_permalink( get_page_by_title( 'Cookieverklaring' ) ) .  '">Cookieverklaring</a></div>';
                         }
                 endif; ?>
             </div>

@@ -5,10 +5,15 @@
 include_once get_template_directory() . '/installer/class/required-plugins.class.php';
 include_once get_template_directory() . '/installer/init-plugins.php';
 
-// SET GFROM LICENSE
-if (is_plugin_active( 'gravityforms/gravityforms.php' )){
-    define( 'GF_LICENSE_KEY', '10eaf6e3469f1476b263021308803dda' );
+function grizzly_init() {
+
+    // SET GFROM LICENSE
+    if (is_plugin_active( 'gravityforms/gravityforms.php' )){
+        define( 'GF_LICENSE_KEY', '10eaf6e3469f1476b263021308803dda' );
+    }
+
 }
+add_action( 'admin_init', 'grizzly_init' );
 
 if(isset($_POST['grizzlyinstall'])) {
 
